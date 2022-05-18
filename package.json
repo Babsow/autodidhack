@@ -1,0 +1,23 @@
+{
+  "name": "autodidhack",
+  "version": "1.0.0",
+  "description": "autodidhack is a blog where i'll put the things i learn",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Babsow/autodidhack.git"
+  },
+  "author": "Hamadou Djiby SOW",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Babsow/autodidhack/issues"
+  },
+  "homepage": "https://github.com/Babsow/autodidhack#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "save": "^2.5.0"
+  }
+}
