@@ -1,9 +1,11 @@
 const express = require('express');
 const res = require('express/lib/response');
 const mongoose = require('mongoose');
-
-
+const article = require('./models/article')
+const router = require('./routes/articles')
 const app = express();
+
+mongoose.connect('mongodb://localhost/blog')
 
 app.set('view engine' , 'ejs');
 app.get('/' ,(req, res) => {
@@ -23,5 +25,5 @@ app.get('/' ,(req, res) => {
    res.render('index' , {articles : articles});
 });
 
-
+app.use('/', router);
 app.listen(5000);
