@@ -14,14 +14,14 @@
   <% articles.forEach( article => { %>
     <div class="card mt-4">
         <div class="card-body">
-          <h4 class="card-title"><%= article.article%></h4>
-          
-          <div class="card-text mb-2"> <%=article.desc%> </div>
+          <h4 class="card-title"><%= article.title%></h4> 
+          <div class="card-subtitle tex-muted mb-2"><%= article.createdAt.toLocaleDateString()%> </div>
+          <div class="card-text mb-2"><%= article.description%> </div>
+          <div class="card-text mb-2"><%= article.markdown%> </div>
         </div>
     </div>
 
   <%}) %>
   </div>
-    <p>Hello world from EJS</p>  
 </body>
 </html>

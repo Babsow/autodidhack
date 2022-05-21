@@ -5,24 +5,13 @@ const article = require('./models/article')
 const router = require('./routes/articles')
 const app = express();
 
-mongoose.connect('mongodb://localhost/blog')
+mongoose.connect('mongodb://localhost/autodidHack')
 
 app.set('view engine' , 'ejs');
-app.get('/' ,(req, res) => {
-  let articles = [
-    {
-      title : "Arcticle title",
-     adate : new Date(),
-     desc : 'desc test' 
-    },
-    {
-      title : "Arcticle title 2",
-     adate : new Date(),
-     desc : 'desc test' 
-    }
-  ]
-
-   res.render('index' , {articles : articles});
+app.use(express.urlencoded({extended: false}));
+app.get('/' ,async(req, res) => {
+  let articles = await article.find();
+   res.render('index' , {articles : articles });
 });
 
 app.use('/', router);
