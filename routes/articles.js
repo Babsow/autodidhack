@@ -8,7 +8,7 @@ router.get('/newArticle', (req, res) => {
 });
 
 router.get("/:slug", async(req, res)=>{
-  const article = await Article.findOne({id:req.params.slug});
+  const article = await Article.findOne({slug:req.params.slug});
   console.log(req.params.id);
   if(article == null) {
     res.redirect('/');

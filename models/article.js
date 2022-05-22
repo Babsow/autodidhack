@@ -1,4 +1,4 @@
-const marked  = require('marked');
+const {marked} = require('marked');
 const mongoose = require('mongoose');
 const slugify = require('slugify');
 const creatDomPurify = require("dompurify");
