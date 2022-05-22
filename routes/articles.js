@@ -7,8 +7,8 @@ router.get('/newArticle', (req, res) => {
   res.render('newArticle', {article : new Article()})
 });
 
-router.get("/:id", async(req, res)=>{
-  const article = await Article.findOne({_id: mongoose.Types.ObjectId(req.params.id)});
+router.get("/:slug", async(req, res)=>{
+  const article = await Article.findOne({id:req.params.slug});
   console.log(req.params.id);
   if(article == null) {
     res.redirect('/');
